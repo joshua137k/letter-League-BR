@@ -5,12 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Letter League Clone</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
   <div id="game">
-    <div id="board">
-      <!-- Tabuleiro do jogo -->
-    </div>
+    <div id="board-controls">
+        <span id="zoom-in" class="material-icons">zoom_in</span>
+        <div id="board-container">
+          <div id="board">
+            <!-- Tabuleiro do jogo -->
+          </div>
+        </div>
+        <span id="zoom-out" class="material-icons">zoom_out</span>
+      </div>
+      
     <div id="letters">
       <!-- Letras do jogador -->
     </div>
@@ -19,11 +28,11 @@
       <button id="end-turn">Finalizar Turno</button>
     </div>
     <div id="score">
-      <!-- Pontuações -->
       <p>Jogador 1: <span id="score1">0</span></p>
       <p>Jogador 2: <span id="score2">0</span></p>
     </div>
   </div>
   <script src="script.js"></script>
+  <script src="control.js"></script>
 </body>
 </html>

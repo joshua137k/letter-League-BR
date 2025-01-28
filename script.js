@@ -91,6 +91,7 @@ board.addEventListener("drop", (e) => {
   const letter = e.dataTransfer.getData("text");
   if (e.target.textContent === "") {
     e.target.textContent = letter;
+    e.target.style.backgroundColor = "lightblue";
     verificarTabuleiro();
   }
 });
