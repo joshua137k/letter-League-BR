@@ -1,3 +1,4 @@
+/* 🎨 Estilo geral do corpo */
 body {
   font-family: Arial, sans-serif;
   display: flex;
@@ -5,102 +6,116 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: rgb(243, 209, 165);
+  background-color: rgb(243, 209, 165); /* Cor de fundo agradável */
 }
 
+/* 📦 Container principal do jogo */
 #game {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem; /* Maior espaçamento entre seções */
 }
 
+/* 🎲 Controle do tabuleiro */
 #board-controls {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px; /* Espaçamento maior */
 }
 
+/* 🏗️ Container do tabuleiro */
 #board-container {
-  width: 900px;
-  height: 65vh;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  max-height: 70vh; /* Limita a altura do tabuleiro */
   overflow: hidden;
   position: relative;
-  border: 2px solid #1a1a1a;
-  background: rgb(229, 190, 138);
+  border: 2px solid #1a1a1a; /* Borda do tabuleiro */
+  background: rgb(229, 190, 138); /* Cor de fundo */
+  padding: 10px; /* Espaçamento interno */
+  border-radius: 8px; /* Borda arredondada */
 }
 
+/* 🎯 Tabuleiro */
 #board {
-  transform-origin: 0 0;
-  position: absolute;
   display: grid;
-  grid-template-columns: repeat(27, 40px);
-  grid-gap: 5px;
+  grid-template-columns: repeat(27, 35px); /* Reduzindo o tamanho das células */
+  grid-gap: 4px; /* Espaçamento entre células */
+  justify-content: center; /* Centraliza o tabuleiro */
 }
 
-#board div {
-  width: 40px;
-  height: 40px;
-  background-color: #a9aa9f;
-  border: 1px solid #333333;
-  text-align: center;
-  line-height: 40px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  transition: background-color 0.2s;
-}
 
-#board div:hover {
-  background-color: #ddd;
-}
 
+/* 🅰️ Letras disponíveis */
 #letters {
   display: flex;
-  gap: 10px;
+  gap: 12px; /* Maior espaçamento entre letras */
+  flex-wrap: wrap; /* Permite quebra de linha para letras em telas menores */
+  justify-content: center; /* Centraliza as letras */
 }
 
-#letters div {
-  width: 40px;
-  height: 40px;
+/* Estilização das letras individuais */
+.lett {
+  width: 45px;
+  height: 45px;
   background-color: #ffeb3b;
   text-align: center;
-  line-height: 40px;
-  font-size: 1.2rem;
+  line-height: 45px;
+  font-size: 1.3rem;
   font-weight: bold;
-  cursor: pointer;
+  cursor: grab;
   user-select: none;
-  border-radius: 4px;
-  transition: transform 0.2s;
+  border-radius: 6px; /* Bordas arredondadas */
+  border: 2px solid #222; /* Borda escura */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Leve sombra */
+  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
 }
 
-#letters div:active {
-  transform: scale(0.9);
+/* ✋ Efeito ao arrastar */
+.lett:active {
+  transform: scale(0.95);
+  cursor: grabbing;
+  background-color: #fdd835; /* Cor mais escura ao clicar */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Reduz a sombra */
 }
 
+/* 🎮 Controles do jogo */
 #controls {
   display: flex;
-  gap: 10px;
+  gap: 15px; /* Espaçamento maior entre botões */
+  flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+  justify-content: center;
 }
 
+/* Estilização dos botões */
 #controls button {
-  padding: 10px 20px;
+  padding: 10px 24px;
   font-size: 1rem;
   cursor: pointer;
-  background-color: #007bff;
+  background-color: #007bff; /* Azul padrão */
   color: white;
   border: none;
-  border-radius: 4px;
-  transition: background-color 0.2s, transform 0.2s;
+  border-radius: 6px; /* Bordas arredondadas */
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Leve sombra */
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
+/* ✨ Efeito hover dos botões */
 #controls button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Azul mais escuro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta a sombra no hover */
 }
 
+/* ✋ Efeito ao clicar no botão */
 #controls button:active {
-  transform: scale(0.95);
+  transform: scale(0.95); /* Reduz ligeiramente no clique */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Reduz a sombra */
 }
 
+/* 🔎 Ícones de zoom */
 .material-icons {
   font-size: 2rem;
   color: #333;
@@ -108,10 +123,91 @@ body {
   transition: color 0.2s, transform 0.2s;
 }
 
+/* ✨ Efeito hover nos ícones */
 .material-icons:hover {
-  color: #0056b3;
+  color: #0056b3; /* Azul escuro */
+  transform: scale(1.1); /* Leve aumento no hover */
 }
 
+/* ✋ Efeito ao clicar no ícone */
 .material-icons:active {
   transform: scale(0.9);
+}
+
+/* 📏 Status do multiplayer */
+#multiplayer-status {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
+/* 🎯 Estilo para cada célula do tabuleiro */
+.cell {
+  width: 35px; /* Largura da célula */
+  height: 35px; /* Altura da célula */
+  background-color: #a9aa9f; /* Cor de fundo padrão */
+  border: 1px solid #333333; /* Borda escura */
+  text-align: center; /* Centraliza o texto horizontalmente */
+  line-height: 35px; /* Centraliza o texto verticalmente */
+  font-size: 1.1rem; /* Tamanho do texto */
+  font-weight: bold; /* Texto em negrito */
+  border-radius: 4px; /* Borda levemente arredondada */
+  transition: background-color 0.2s, transform 0.1s; /* Transições suaves */
+}
+
+/* ✨ Efeito ao passar o mouse */
+.cell:hover {
+  background-color: #ddd; /* Cor de destaque ao passar o mouse */
+  transform: scale(1.05); /* Leve aumento no hover */
+}
+
+/* 🟦 Estilo ao soltar uma letra */
+.cell.dropped {
+  background-color: lightblue; /* Cor ao receber uma letra */
+  transition: background-color 0.3s; /* Transição suave na mudança */
+}
+
+.cell.droppedOther {
+  background-color: rgb(230, 173, 173); /* Cor ao receber uma letra */
+  transition: background-color 0.3s; /* Transição suave na mudança */
+}
+
+/* 🎯 Container da pontuação */
+#score {
+  display: flex;
+  flex-direction: row; /* Mantém os elementos lado a lado */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Alinha verticalmente */
+  gap: 15px; /* Espaçamento entre os itens */
+  background-color: #ffffff; /* Fundo branco para destaque */
+  padding: 10px 20px;
+  border-radius: 8px; /* Bordas arredondadas */
+  border: 2px solid #333; /* Borda escura */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Leve sombra */
+  width: fit-content; /* Adapta o tamanho ao conteúdo */
+}
+
+/* 📄 Estilização dos parágrafos */
+#score p {
+  display: flex;
+  align-items: center; /* Garante alinhamento vertical */
+  gap: 5px; /* Espaçamento entre o texto e o número */
+  font-size: 1.2rem; /* Ajusta o tamanho da fonte */
+  font-weight: bold; /* Negrito */
+  color: #222; /* Cor do texto */
+  margin: 0; /* Remove margem padrão */
+  padding: 5px 10px;
+  background: #e0e0e0; /* Fundo levemente destacado */
+  border-radius: 6px; /* Bordas arredondadas */
+  white-space: nowrap; /* Evita quebra de linha */
+}
+
+/* 🔢 Destaque nos números do placar */
+#score span {
+  color: #007bff; /* Azul para os números */
+  font-weight: bold;
+  font-size: 1.3rem;
 }
