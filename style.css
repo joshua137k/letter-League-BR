@@ -7,6 +7,10 @@ body {
   height: 100vh;
   margin: 0;
   background-color: rgb(243, 209, 165); /* Cor de fundo agradável */
+  user-select: none; /* Desativa a seleção */
+  -webkit-user-select: none; /* Para navegadores WebKit (Chrome, Safari) */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para Internet Explorer/Edge */
 }
 
 /* 📦 Container principal do jogo */
